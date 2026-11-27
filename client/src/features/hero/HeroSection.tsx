@@ -12,10 +12,10 @@ export function HeroSection({ onViewProjects, onGetInTouch }: HeroSectionProps) 
   return (
     <section
       aria-label="Introduction"
-      className="grid grid-cols-1 md:grid-cols-12 gap-lg items-center"
+      className="grid grid-cols-1 lg:grid-cols-12 gap-lg items-center"
     >
-      {/* Left: Introduction */}
-      <div className="md:col-span-7 flex flex-col gap-md">
+      {/* Left: Introduction (5 cols on wide layout) */}
+      <div className="lg:col-span-5 flex flex-col gap-md">
         <div className="flex items-center gap-sm">
           <Badge variant="status">
             <span
@@ -35,7 +35,7 @@ export function HeroSection({ onViewProjects, onGetInTouch }: HeroSectionProps) 
           </p>
         </div>
 
-        <p className="font-body text-body-md text-light-on-surface-muted dark:text-dark-on-surface-muted max-w-prose">
+        <p className="font-body text-body-md text-light-on-surface-muted dark:text-dark-on-surface-muted leading-relaxed">
           {PROFILE_DATA.heroIntro}
         </p>
 
@@ -49,8 +49,8 @@ export function HeroSection({ onViewProjects, onGetInTouch }: HeroSectionProps) 
         </div>
       </div>
 
-      {/* Right: Living Editorial Female Developer Desk Illustration */}
-      <div className="md:col-span-5 flex justify-center">
+      {/* Right: Expanded Living Studio & Coffee Machine Scene (7 cols on wide layout) */}
+      <div className="lg:col-span-7 flex justify-center">
         <DeskIllustration />
       </div>
     </section>
