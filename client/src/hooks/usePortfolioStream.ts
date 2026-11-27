@@ -138,6 +138,7 @@ export function usePortfolioStream() {
     guestbook,
     isLoading,
     toast,
+    showToast,
     dismissToast: () => setToast(null),
     isProjectLiked: projectLikes.isLiked,
     isPostLiked: postLikes.isLiked,
@@ -148,3 +149,4 @@ export function usePortfolioStream() {
     refreshAll,
   };
 }
+
