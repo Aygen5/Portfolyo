@@ -774,16 +774,14 @@ export function DeskIllustration() {
               />
 
               {/* Pouring Hot Coffee Stream from Spout into Mug! */}
-              <motion.line
-                x1="457"
-                y1="158"
-                x2="457"
-                y2="176"
-                stroke="#6F3E26"
-                strokeWidth="3.2"
-                strokeLinecap="round"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: [0, 1, 1, 0], opacity: [0.3, 1, 1, 0] }}
+              <motion.rect
+                x="455.5"
+                y="158"
+                width="3"
+                rx="1.5"
+                fill="#6F3E26"
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: [0, 16, 16, 0], opacity: [0.3, 1, 1, 0] }}
                 transition={{ duration: 3.3, times: [0, 0.15, 0.85, 1] }}
               />
 
