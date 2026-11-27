@@ -45,11 +45,11 @@ Bu plan, projenin baştan sona **Clean Architecture** ve **Design System** kural
 ---
 
 ## Faz 3: Hero, Navbar & Twitter/X Profil Başlığı
-- [ ] **Navbar:** Sol tarafta hover'da yeniden çizilen el yazısı **A.Y** SVG imzası, orta navigasyon linkleri, tema değiştirici ve `Hire Me` butonu.
-- [ ] **Compact Hero:** Durum rozeti, `DM Serif Display` başlık, CTA butonları (`View Projects`, `Get in Touch`).
-- [ ] **Yaşayan Çalışma Masası İllüstrasyonu:** Kahve buharı (`steamRise`), nefes alan asılı lamba (`lampBreathe`), bitki salınımı (`leafSway`) ve fareyi takip eden paralaks (`useMouseParallax`) animasyonlarını Framer Motion + SVG ile kur.
-- [ ] **Social Profile Header Card:** Pastel/organik gradyan kapak banner'ı, yüzü tam ortalanmış yuvarlak avatar (`object-cover`), doğrulanmış rozeti, bio, anlık durum etiketi ve sosyal linkler (`GitHub`, `LinkedIn`, `Email`).
-- [ ] **Horizontal Profile Tabs:** `Feed`, `About & Journey`, `Tech Stack`, `Guestbook / DM` sekmeleri ve `AnimatePresence` geçişi.
+- [x] **Navbar:** Sol tarafta hover'da yeniden çizilen el yazısı **A.Y** SVG imzası, orta navigasyon linkleri, tema değiştirici ve `Hire Me` butonu.
+- [x] **Compact Hero:** Durum rozeti, `DM Serif Display` başlık, CTA butonları (`View Projects`, `Get in Touch`).
+- [x] **Yaşayan Çalışma Masası İllüstrasyonu:** Kahve buharı (`steamRise`), nefes alan asılı lamba (`lampBreathe`), bitki salınımı (`leafSway`) ve fareyi takip eden paralaks (`useMouseParallax`) animasyonlarını Framer Motion + SVG ile kur.
+- [x] **Social Profile Header Card:** Pastel/organik gradyan kapak banner'ı, yüzü tam ortalanmış yuvarlak avatar (`object-cover`), doğrulanmış rozeti, bio, anlık durum etiketi ve sosyal linkler (`GitHub`, `LinkedIn`, `Email`).
+- [x] **Horizontal Profile Tabs:** `Feed`, `About & Journey`, `Tech Stack`, `Guestbook / DM` sekmeleri ve `AnimatePresence` geçişi.
 
 ---
 
