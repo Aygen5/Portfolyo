@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -58,3 +58,4 @@ model Message {
   isRead      Boolean  @default(false)
   createdAt   DateTime @default(now())
 }
+
