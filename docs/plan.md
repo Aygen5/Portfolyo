@@ -71,10 +71,10 @@ Bu plan, projenin baştan sona **Clean Architecture** ve **Design System** kural
 ---
 
 ## Faz 5: Şifreli Yönetim Paneli (`/admin`)
-- [ ] `/admin` rotası ve şifre/secret giriş ekranı (`ADMIN_SECRET` doğrulaması).
-- [ ] **Gelen Kutusu (DM / Hire Me):** Ziyaretçilerden gelen mesajları listeleme ve okundu işaretleme.
-- [ ] **İçerik Yönetimi:** Yeni proje veya mini geliştirici notu (`post`) ekleme ve silme.
-- [ ] **Guestbook Moderasyonu:** Ziyaretçi defteri kayıtlarını görüntüleme ve gerekirse silme.
+- [x] `/admin` rotası ve şifre/secret giriş ekranı (`ADMIN_SECRET` doğrulaması).
+- [x] **Gelen Kutusu (DM / Hire Me):** Ziyaretçilerden gelen mesajları listeleme ve okundu işaretleme.
+- [x] **İçerik Yönetimi:** Yeni proje veya mini geliştirici notu (`post`) ekleme ve silme.
+- [x] **Guestbook Moderasyonu:** Ziyaretçi defteri kayıtlarını görüntüleme ve gerekirse silme.
 
 ---
 
