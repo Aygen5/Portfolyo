@@ -66,36 +66,17 @@ export function ProjectFeedCard({
         </p>
       </div>
 
-      {/* Visual Screenshot Container (Un-cropped object-contain fitting) */}
+      {/* Visual Screenshot Container (Unified horizontal card layout like all projects) */}
       <div
         onClick={() => onOpenCaseStudy(project)}
-        className="group relative cursor-pointer rounded-md overflow-hidden border border-light-outline dark:border-dark-outline bg-light-surface dark:bg-dark-surface p-sm sm:p-md"
+        className="group relative cursor-pointer rounded-md overflow-hidden border border-light-outline dark:border-dark-outline bg-light-surface dark:bg-dark-surface"
       >
-        {project.secondaryImageUrl ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-md items-center justify-items-center">
-            <img
-              src={project.imageUrl}
-              alt={`${project.title} screen 1`}
-              loading="lazy"
-              className="max-h-80 w-auto object-contain rounded border border-light-outline/60 dark:border-dark-outline/60 shadow-xs transition-transform duration-300 group-hover:scale-[1.01]"
-            />
-            <img
-              src={project.secondaryImageUrl}
-              alt={`${project.title} screen 2`}
-              loading="lazy"
-              className="max-h-80 w-auto object-contain rounded border border-light-outline/60 dark:border-dark-outline/60 shadow-xs transition-transform duration-300 group-hover:scale-[1.01]"
-            />
-          </div>
-        ) : (
-          <div className="flex items-center justify-center">
-            <img
-              src={project.imageUrl}
-              alt={project.title}
-              loading="lazy"
-              className="max-h-80 w-full object-contain rounded transition-transform duration-300 group-hover:scale-[1.01]"
-            />
-          </div>
-        )}
+        <img
+          src={project.imageUrl}
+          alt={project.title}
+          loading="lazy"
+          className="w-full h-64 sm:h-80 object-cover object-top transition-transform duration-300 group-hover:scale-[1.01]"
+        />
       </div>
 
       {/* Tech Stack Badges */}

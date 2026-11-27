@@ -174,8 +174,8 @@ export const SEED_PROJECTS: (CreateProjectInput & { initialLikes: number })[] = 
     learned: [
       'Pairing BLoC/Cubit with Clean Architecture makes writing 400+ fast, deterministic tests genuinely enjoyable.',
     ],
-    imageUrl: '/assets/projects/nestora-dashboard.png',
-    secondaryImageUrl: '/assets/projects/nestora-welcome.png',
+    imageUrl: '/assets/projects/nestora-showcase.png',
+    secondaryImageUrl: '/assets/projects/nestora-welcome-showcase.png',
     liveUrl: null,
     repoUrl: 'https://github.com/Aygen5/NESTORA',
     sortOrder: 3,
@@ -344,8 +344,8 @@ export const SEED_PROJECTS: (CreateProjectInput & { initialLikes: number })[] = 
     learned: [
       'Clear upfront architecture and sprint planning multiply a team’s velocity far more than rushing straight into code.',
     ],
-    imageUrl: '/assets/projects/pawcare-screen-1.jpg',
-    secondaryImageUrl: '/assets/projects/pawcare-screen-2.jpg',
+    imageUrl: '/assets/projects/pawcare-showcase.png',
+    secondaryImageUrl: '/assets/projects/pawcare-detail-showcase.png',
     liveUrl: null,
     repoUrl: 'https://github.com/Aygen5/PawCare',
     sortOrder: 6,
