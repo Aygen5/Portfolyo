@@ -1,15 +1,35 @@
 import { useCallback, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Card } from '../components/Card';
+import { Toast } from '../components/Toast';
 import { ProfileTabId } from '../domain/models';
+import { AboutTab } from '../features/about/AboutTab';
+import { FeedTab } from '../features/feed/FeedTab';
+import { GuestbookTab } from '../features/guestbook/GuestbookTab';
 import { HeroSection } from '../features/hero/HeroSection';
 import { Footer } from '../features/navbar/Footer';
 import { Navbar } from '../features/navbar/Navbar';
 import { ProfileHeaderCard } from '../features/profile/ProfileHeaderCard';
 import { ProfileTabs } from '../features/profile/ProfileTabs';
+import { TechStackTab } from '../features/stack/TechStackTab';
+import { usePortfolioStream } from '../hooks/usePortfolioStream';
 
 export function App() {
   const [activeTab, setActiveTab] = useState<ProfileTabId>('feed');
+  const {
+    projects,
+    posts,
+    guestbook,
+    isLoading,
+    toast,
+    dismissToast,
+    isProjectLiked,
+    isPostLiked,
+    handleLikeProject,
+    handleLikePost,
+    handleAddGuestbookEntry,
+    handleSendMessage,
+  } = usePortfolioStream();
 
   const handleSelectTab = useCallback((tab: ProfileTabId, scrollToTabs = false) => {
     setActiveTab(tab);
@@ -46,7 +66,7 @@ export function App() {
           <ProfileTabs
             activeTab={activeTab}
             onSelectTab={(tab) => handleSelectTab(tab, false)}
-            projectCount={6}
+            projectCount={projects.length || 6}
           />
 
           <div className="p-md sm:p-lg bg-light-surface/40 dark:bg-dark-surface/30">
@@ -61,9 +81,29 @@ export function App() {
                 exit={{ opacity: 0, y: -4 }}
                 transition={{ duration: 0.22 }}
               >
-                <div className="rounded-md border border-dashed border-light-outline dark:border-dark-outline p-lg text-center font-label text-label-sm text-light-on-surface-muted dark:text-dark-on-surface-muted">
-                  Active tab: <strong className="uppercase">{activeTab}</strong> — Content panels ready for Phase 4 integration.
-                </div>
+                {activeTab === 'feed' && (
+                  <FeedTab
+                    projects={projects}
+                    posts={posts}
+                    isLoading={isLoading}
+                    isProjectLiked={isProjectLiked}
+                    isPostLiked={isPostLiked}
+                    onLikeProject={handleLikeProject}
+                    onLikePost={handleLikePost}
+                  />
+                )}
+
+                {activeTab === 'about' && <AboutTab />}
+
+                {activeTab === 'stack' && <TechStackTab />}
+
+                {activeTab === 'guestbook' && (
+                  <GuestbookTab
+                    entries={guestbook}
+                    onAddEntry={handleAddGuestbookEntry}
+                    onSendMessage={handleSendMessage}
+                  />
+                )}
               </motion.div>
             </AnimatePresence>
           </div>
@@ -71,6 +111,12 @@ export function App() {
       </main>
 
       <Footer />
+
+      <Toast
+        message={toast?.message ?? null}
+        type={toast?.type}
+        onDismiss={dismissToast}
+      />
     </div>
   );
 }
