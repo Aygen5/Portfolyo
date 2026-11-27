@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Build outputs
+dist/
+client/dist/
+server/dist/
+
+# Environment variables
+.env
+server/.env
+client/.env
+*.local
+
+# SQLite database files
+server/prisma/*.db
+server/prisma/*.db-journal
+
+# Logs & OS
+*.log
+.DS_Store
+Thumbs.db
