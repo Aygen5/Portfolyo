@@ -16,22 +16,22 @@ Bu plan, projenin baştan sona **Clean Architecture** ve **Design System** kural
 ---
 
 ## Faz 1: Data & Backend Katmanı (Clean Architecture — Server)
-- [ ] **Prisma & SQLite Kurulumu:** `server/prisma/schema.prisma` içinde `Project`, `Post`, `GuestbookEntry`, `Message` modellerini tanımla ve ilk migration'ı oluştur.
-- [ ] **Domain Katmanı (`server/src/domain/`):**
-  - [ ] Saf TypeScript entity'lerini (`Project`, `Post`, `GuestbookEntry`, `ContactMessage`) tanımla.
-  - [ ] Repository arayüzlerini (`IProjectRepository`, `IPostRepository`, `IGuestbookRepository`, `IMessageRepository`) yaz.
-- [ ] **Infrastructure Katmanı (`server/src/infrastructure/`):**
-  - [ ] Prisma modellerini Domain Entity'lere dönüştüren izole Mapper'ları yaz.
-  - [ ] Repository implementasyonlarını (`PrismaProjectRepository` vb.) oluştur.
-  - [ ] 6 projeyi (Aura Crisis Network, FinanceFocus, NESTORA, ProductIQ, ProjectGym, PawCare) ve başlangıç geliştirici notlarını ekleyen idempotent `seed.ts` script'ini yaz ve çalıştır.
-- [ ] **Application Katmanı (`server/src/application/`):**
-  - [ ] Public Use Case'leri yaz: `GetProjects`, `LikeProject`, `GetPosts`, `LikePost`, `GetGuestbook`, `CreateGuestbookEntry`, `SendMessage`.
-  - [ ] Admin Use Case'leri yaz: `AdminVerify`, `CreateProject`, `DeleteProject`, `CreatePost`, `DeletePost`, `GetMessages`, `MarkMessageRead`, `DeleteGuestbookEntry`.
-- [ ] **Presentation Katmanı (`server/src/presentation/`):**
-  - [ ] Zod validasyon şemalarını yaz.
-  - [ ] `adminAuthMiddleware`, `rateLimiter` ve merkezi `errorHandler` middleware'lerini kur.
-  - [ ] Express controller ve route'larını (`/api/projects`, `/api/posts`, `/api/guestbook`, `/api/messages`, `/api/admin/*`) bağla.
-- [ ] Backend API uçlarını (health, public get/post, admin auth) test ederek doğrula.
+- [x] **Prisma & SQLite Kurulumu:** `server/prisma/schema.prisma` içinde `Project`, `Post`, `GuestbookEntry`, `Message` modellerini tanımla ve ilk migration'ı oluştur.
+- [x] **Domain Katmanı (`server/src/domain/`):**
+  - [x] Saf TypeScript entity'lerini (`Project`, `Post`, `GuestbookEntry`, `ContactMessage`) tanımla.
+  - [x] Repository arayüzlerini (`IProjectRepository`, `IPostRepository`, `IGuestbookRepository`, `IMessageRepository`) yaz.
+- [x] **Infrastructure Katmanı (`server/src/infrastructure/`):**
+  - [x] Prisma modellerini Domain Entity'lere dönüştüren izole Mapper'ları yaz.
+  - [x] Repository implementasyonlarını (`PrismaProjectRepository` vb.) oluştur.
+  - [x] 6 projeyi (Aura Crisis Network, FinanceFocus, NESTORA, ProductIQ, ProjectGym, PawCare) ve başlangıç geliştirici notlarını ekleyen idempotent `seed.ts` script'ini yaz ve çalıştır.
+- [x] **Application Katmanı (`server/src/application/`):**
+  - [x] Public Use Case'leri yaz: `GetProjects`, `LikeProject`, `GetPosts`, `LikePost`, `GetGuestbook`, `CreateGuestbookEntry`, `SendMessage`.
+  - [x] Admin Use Case'leri yaz: `AdminVerify`, `CreateProject`, `DeleteProject`, `CreatePost`, `DeletePost`, `GetMessages`, `MarkMessageRead`, `DeleteGuestbookEntry`.
+- [x] **Presentation Katmanı (`server/src/presentation/`):**
+  - [x] Zod validasyon şemalarını yaz.
+  - [x] `adminAuthMiddleware`, `rateLimiter` ve merkezi `errorHandler` middleware'lerini kur.
+  - [x] Express controller ve route'larını (`/api/projects`, `/api/posts`, `/api/guestbook`, `/api/messages`, `/api/admin/*`) bağla.
+- [x] Backend API uçlarını (health, public get/post, admin auth) test ederek doğrula.
 
 ---
 
