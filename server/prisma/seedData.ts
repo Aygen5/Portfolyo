@@ -344,8 +344,8 @@ export const SEED_PROJECTS: (CreateProjectInput & { initialLikes: number })[] = 
     learned: [
       'Clear upfront architecture and sprint planning multiply a team’s velocity far more than rushing straight into code.',
     ],
-    imageUrl: '/assets/projects/pawcare-hotel.jpg',
-    secondaryImageUrl: '/assets/projects/pawcare-dog.jpg',
+    imageUrl: '/assets/projects/pawcare-screen-1.jpg',
+    secondaryImageUrl: '/assets/projects/pawcare-screen-2.jpg',
     liveUrl: null,
     repoUrl: 'https://github.com/Aygen5/PawCare',
     sortOrder: 6,
@@ -376,13 +376,9 @@ export const SEED_POSTS: (CreatePostInput & { initialLikes: number })[] = [
 
 export const SEED_GUESTBOOK: CreateGuestbookInput[] = [
   {
-    authorName: 'Engin Niyazi Ergül',
-    emoji: '🌟',
-    message: 'Great attention to clean architecture and engineering discipline. Keep building impactful systems, Aygen!',
-  },
-  {
     authorName: 'Studio Visitor',
     emoji: '☕',
     message: 'Love the warm editorial vibe and the Twitter-style project feed. The desk illustration feels so alive!',
   },
 ];
+

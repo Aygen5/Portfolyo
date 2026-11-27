@@ -34,6 +34,10 @@ async function main() {
     }
   }
 
+  await prisma.guestbookEntry.deleteMany({
+    where: { authorName: 'Engin Niyazi Ergül' },
+  });
+
   const existingGuestbook = await prisma.guestbookEntry.count();
   if (existingGuestbook === 0) {
     for (const entry of SEED_GUESTBOOK) {
@@ -58,3 +62,4 @@ main()
   .finally(async () => {
     await prisma.$disconnect();
   });
+
