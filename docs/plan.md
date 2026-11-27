@@ -79,7 +79,7 @@ Bu plan, projenin baştan sona **Clean Architecture** ve **Design System** kural
 ---
 
 ## Faz 6: Son Kontrol, Doğrulama ve Teslim
-- [ ] Responsive (mobil, tablet, masaüstü) ve Warm Light / Warm Dark tema kontrast kontrolleri.
-- [ ] Tüm animasyonların akıcılığı, CV & Sertifika PDF linklerinin çalışırlığı, avatar hizalaması ve API hata senaryolarının testi.
-- [ ] `client` ve `server` TypeScript build (`tsc` & `vite build`) kontrollerinin hatasız geçmesi.
+- [x] Responsive (mobil, tablet, masaüstü) ve Warm Light / Warm Dark tema kontrast kontrolleri.
+- [x] Tüm animasyonların akıcılığı, CV & Sertifika PDF linklerinin çalışırlığı, avatar hizalaması ve API hata senaryolarının testi.
+- [x] `client` ve `server` TypeScript build (`tsc` & `vite build`) kontrollerinin hatasız geçmesi.
 
