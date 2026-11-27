@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id             String   @id @default(cuid())
+  slug           String   @unique
+  title          String
+  subtitle       String
+  category       String   // "fullstack" | "backend" | "mobile"
+  summary        String
+  overview       String
+  problem        String
+  goal           String
+  solution       String
+  techStackJson  String   // JSON array of strings (badges)
+  highlightsJson String   // JSON array of strings
+  architectureJson String // JSON object: { layers: [{ name, text }], note }
+  featuresJson   String   // JSON array: [{ label, text }]
+  challengesJson String   // JSON array: [{ label, text }]
+  learnedJson    String   // JSON array of strings
+  imageUrl       String
+  secondaryImageUrl String?
+  liveUrl        String?
+  repoUrl        String
+  likes          Int      @default(0)
+  sortOrder      Int      @default(0)
+  createdAt      DateTime @default(now())
+}
+
+model Post {
+  id        String   @id @default(cuid())
+  content   String
+  mood      String   @default("✨")
+  likes     Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+model GuestbookEntry {
+  id         String   @id @default(cuid())
+  authorName String
+  emoji      String   @default("👋")
+  message    String
+  createdAt  DateTime @default(now())
+}
+
+model Message {
+  id          String   @id @default(cuid())
+  senderName  String
+  senderEmail String
+  subject     String
+  body        String
+  isRead      Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
