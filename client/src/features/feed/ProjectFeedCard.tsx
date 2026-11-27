@@ -66,16 +66,16 @@ export function ProjectFeedCard({
         </p>
       </div>
 
-      {/* Visual Screenshot Container (Unified horizontal card layout like all projects) */}
+      {/* Visual Screenshot Container (Full un-cropped horizontal display) */}
       <div
         onClick={() => onOpenCaseStudy(project)}
-        className="group relative cursor-pointer rounded-md overflow-hidden border border-light-outline dark:border-dark-outline bg-light-surface dark:bg-dark-surface"
+        className="group relative cursor-pointer rounded-md overflow-hidden border border-light-outline dark:border-dark-outline bg-light-surface dark:bg-dark-surface flex items-center justify-center"
       >
         <img
           src={project.imageUrl}
           alt={project.title}
           loading="lazy"
-          className="w-full h-64 sm:h-80 object-cover object-top transition-transform duration-300 group-hover:scale-[1.01]"
+          className="w-full h-auto max-h-[420px] object-contain transition-transform duration-300 group-hover:scale-[1.01]"
         />
       </div>
 
