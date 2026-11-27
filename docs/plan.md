@@ -54,19 +54,19 @@ Bu plan, projenin baştan sona **Clean Architecture** ve **Design System** kural
 ---
 
 ## Faz 4: 4 Ana Sekme ve İçeriklerin İnşası
-- [ ] **Feed Sekmesi (`features/feed/`):**
-  - [ ] İmza söz kartı (*"I don't just learn. I build..."*) ve mini geliştirici notları (`posts`).
-  - [ ] Pinned rozeti **olmadan** 6 proje kartı (kategori etiketi, özet, teknoloji rozetleri, optimistic ❤️ beğeni sayacı, GitHub Repo, Live Demo ve `View Case Study` butonu).
-  - [ ] **Case Study Thread Drawer / Modal:** Tıklandığında Problem, Goal, Solution, Architecture Layers, Challenges & Learned ve ekran görüntülerini Twitter Thread estetiğinde açan detay bileşeni.
-- [ ] **About & Journey Sekmesi (`features/about/`):**
-  - [ ] Hakkımda özeti (Backend, Full-Stack, Mobile, SAP ilgisi, Clean Architecture & Proje Yönetimi vurgusu) + 4 `Key Focus Areas` kartı.
-  - [ ] `Download CV (PDF)` butonu.
-  - [ ] Eğitim & Gelişim Timeline'ı (İstanbul Nişantaşı Üni., SoftITO, TalentCoders TechCamp, Acun Medya Akademi) ve her sertifika için yeni sekmede açılan `View Certificate` butonları.
-- [ ] **Tech Stack Sekmesi (`features/stack/`):**
-  - [ ] 4 kategoride (`Backend & APIs`, `Frontend & Mobile`, `Databases & Cloud`, `Architecture, DevOps & AI Workflow`) etkileşimli teknoloji rozetleri ve hover/focus deneyim notları.
-- [ ] **Guestbook / DM Sekmesi (`features/guestbook/`):**
-  - [ ] Gerçek zamanlı Ziyaretçi Defteri (isim + mood emoji + mesaj ekleme ve listeleme).
-  - [ ] DM / Hire Me formu (başarılı gönderimde zarf uçuş `envelopeFly` animasyonu).
+- [x] **Feed Sekmesi (`features/feed/`):**
+  - [x] İmza söz kartı (*"I don't just learn. I build..."*) ve mini geliştirici notları (`posts`).
+  - [x] Pinned rozeti **olmadan** 6 proje kartı (kategori etiketi, özet, teknoloji rozetleri, optimistic ❤️ beğeni sayacı, GitHub Repo, Live Demo ve `View Case Study` butonu).
+  - [x] **Case Study Thread Drawer / Modal:** Tıklandığında Problem, Goal, Solution, Architecture Layers, Challenges & Learned ve ekran görüntülerini Twitter Thread estetiğinde açan detay bileşeni.
+- [x] **About & Journey Sekmesi (`features/about/`):**
+  - [x] Hakkımda özeti (Backend, Full-Stack, Mobile, SAP ilgisi, Clean Architecture & Proje Yönetimi vurgusu) + 4 `Key Focus Areas` kartı.
+  - [x] `Download CV (PDF)` butonu.
+  - [x] Eğitim & Gelişim Timeline'ı (İstanbul Nişantaşı Üni., SoftITO, TalentCoders TechCamp, Acun Medya Akademi) ve her sertifika için yeni sekmede açılan `View Certificate` butonları.
+- [x] **Tech Stack Sekmesi (`features/stack/`):**
+  - [x] 4 kategoride (`Backend & APIs`, `Frontend & Mobile`, `Databases & Cloud`, `Architecture, DevOps & AI Workflow`) etkileşimli teknoloji rozetleri ve hover/focus deneyim notları.
+- [x] **Guestbook / DM Sekmesi (`features/guestbook/`):**
+  - [x] Gerçek zamanlı Ziyaretçi Defteri (isim + mood emoji + mesaj ekleme ve listeleme).
+  - [x] DM / Hire Me formu (başarılı gönderimde zarf uçuş `envelopeFly` animasyonu).
 
 ---
 
