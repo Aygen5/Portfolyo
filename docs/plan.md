@@ -83,3 +83,12 @@ Bu plan, projenin baştan sona **Clean Architecture** ve **Design System** kural
 - [x] Tüm animasyonların akıcılığı, CV & Sertifika PDF linklerinin çalışırlığı, avatar hizalaması ve API hata senaryolarının testi.
 - [x] `client` ve `server` TypeScript build (`tsc` & `vite build`) kontrollerinin hatasız geçmesi.
 
+---
+
+## Faz 7: Canlıya Alma — Her Şey Vercel'de + Bulut PostgreSQL (Supabase / Neon)
+- [x] **Adım 1 (AI — Prisma PostgreSQL Geçişi):** `server/prisma/schema.prisma` dosyasını PostgreSQL (`provider = "postgresql"`, `url = env("DATABASE_URL")`) destekleyecek şekilde güncelle.
+- [x] **Adım 2 (AI — Vercel Serverless API Köprüsü):** Express sunucusunu (`server/src/index.ts`) Vercel'in `/api/*` Serverless Function yapısıyla doğrudan çalışacak şekilde kök `api/index.ts` ve `vercel.json` ile bağla (böylece Frontend ve Backend aynı Vercel domaini altında sıfır CORS ve sıfır uyku süresiyle çalışır).
+- [ ] **Adım 3 (SEN — Ücretsiz PostgreSQL URL'si Alma):** Supabase veya Neon.tech üzerinde ücretsiz bir PostgreSQL veritabanı açıp `DATABASE_URL` bağlantı adresini sohbette paylaş.
+- [ ] **Adım 4 (AI — Canlı Veritabanı Kurulumu & Seed):** Paylaşılan `DATABASE_URL` ile canlı PostgreSQL veritabanına tabloları bas (`prisma db push`), 6 projeyi ve başlangıç notlarını yükle (`prisma db seed`) ve tüm değişiklikleri GitHub'a push'la.
+- [ ] **Adım 5 (SEN — Vercel Deploy):** Vercel hesabında `Aygen5/Portfolyo` GitHub reposunu seç, Environment Variables kısmına `DATABASE_URL` ve `ADMIN_SECRET` değerlerini yapıştırıp **Deploy** butonuna bas.
+
