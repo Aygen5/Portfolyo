@@ -9,7 +9,7 @@ export function ProfileHeaderCard({ onContactClick }: ProfileHeaderCardProps) {
   return (
     <div>
       {/* Warm Organic Pastel Cover Banner */}
-      <div className="relative h-36 sm:h-40 w-full overflow-hidden border-b border-light-outline dark:border-dark-outline bg-gradient-to-r from-sage/45 via-light-surface-muted to-terracotta/35 dark:from-dark-secondary dark:via-dark-surface-muted dark:to-terracotta/25">
+      <div className="relative h-36 sm:h-44 w-full overflow-hidden border-b border-light-outline dark:border-dark-outline bg-gradient-to-r from-sage/45 via-light-surface-muted to-terracotta/35 dark:from-dark-secondary dark:via-dark-surface-muted dark:to-terracotta/25">
         <svg
           viewBox="0 0 800 180"
           fill="none"
@@ -33,13 +33,13 @@ export function ProfileHeaderCard({ onContactClick }: ProfileHeaderCardProps) {
 
       {/* Profile Content */}
       <div className="px-md sm:px-lg pb-lg">
-        <div className="flex flex-wrap items-end justify-between gap-sm -mt-12 mb-md">
-          {/* Circular Avatar with Face Centered */}
-          <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-light-surface-container dark:border-dark-surface-container bg-light-surface-muted shadow-md">
+        <div className="flex flex-wrap items-end justify-between gap-sm -mt-14 mb-md">
+          {/* Circular Avatar (Pre-cropped directly on Aygen's face) */}
+          <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-light-surface-container dark:border-dark-surface-container bg-light-surface-muted shadow-md">
             <img
               src={PROFILE_DATA.avatarUrl}
               alt={`${PROFILE_DATA.name} portrait`}
-              className="w-full h-full object-cover object-[54%_48%] scale-125"
+              className="w-full h-full object-cover object-center"
             />
           </div>
 
@@ -51,9 +51,9 @@ export function ProfileHeaderCard({ onContactClick }: ProfileHeaderCardProps) {
           </div>
         </div>
 
-        <div className="flex flex-col gap-xs">
+        <div className="flex flex-col gap-sm">
           {/* Name & Verified Badge */}
-          <div className="flex items-center gap-xs">
+          <div className="flex flex-wrap items-center gap-2">
             <h2 className="font-headline text-headline-lg text-light-on-surface dark:text-dark-on-surface">
               {PROFILE_DATA.name}
             </h2>
@@ -64,22 +64,30 @@ export function ProfileHeaderCard({ onContactClick }: ProfileHeaderCardProps) {
             >
               <Check className="w-3 h-3 stroke-[3]" />
             </span>
+            <span className="font-label text-label-sm text-light-on-surface-muted dark:text-dark-on-surface-muted">
+              {PROFILE_DATA.handle}
+            </span>
           </div>
 
-          {/* Handle & Subtitle */}
-          <div className="flex flex-wrap items-center gap-sm font-label text-label-sm text-light-on-surface-muted dark:text-dark-on-surface-muted">
-            <span>{PROFILE_DATA.handle}</span>
-            <span aria-hidden="true">·</span>
-            <span>Software Engineering Student (3rd Year) · Full-Stack &amp; Backend Developer</span>
+          {/* Structured Pillar Grid (Backend, Frontend, Mobile, Data, SAP, UI/UX & Planning) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 pt-1">
+            {PROFILE_DATA.pillars.map((pillar) => (
+              <div
+                key={pillar.label}
+                className="rounded bg-light-surface dark:bg-dark-surface border border-light-outline dark:border-dark-outline px-sm py-1.5 flex items-center justify-between gap-2"
+              >
+                <span className="font-label text-label-sm font-semibold text-terracotta">
+                  {pillar.label}
+                </span>
+                <span className="font-body text-body-sm text-light-on-surface dark:text-dark-on-surface truncate">
+                  {pillar.value}
+                </span>
+              </div>
+            ))}
           </div>
-
-          {/* Bio */}
-          <p className="font-body text-body-md text-light-on-surface dark:text-dark-on-surface mt-xs max-w-prose">
-            {PROFILE_DATA.bio}
-          </p>
 
           {/* Location & Social Links */}
-          <div className="flex flex-wrap items-center justify-between gap-md pt-sm">
+          <div className="flex flex-wrap items-center justify-between gap-md pt-xs">
             <div className="flex items-center gap-md font-label text-label-sm text-light-on-surface-muted dark:text-dark-on-surface-muted">
               <span className="inline-flex items-center gap-1">
                 <MapPin className="w-3.5 h-3.5 text-terracotta" />

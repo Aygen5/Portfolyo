@@ -13,9 +13,9 @@ interface ProjectFeedCardProps {
 }
 
 const CATEGORY_LABELS: Record<Project['category'], string> = {
-  fullstack: 'FULL-STACK APPLICATION',
-  backend: 'BACKEND ARCHITECTURE',
-  mobile: 'MOBILE ENGINEERING',
+  fullstack: 'FULL-STACK',
+  backend: 'BACKEND (.NET)',
+  mobile: 'MOBILE (FLUTTER)',
 };
 
 export function ProjectFeedCard({
@@ -35,7 +35,7 @@ export function ProjectFeedCard({
             <img
               src={PROFILE_DATA.avatarUrl}
               alt={PROFILE_DATA.name}
-              className="w-full h-full object-cover object-[54%_48%] scale-125"
+              className="w-full h-full object-cover object-center"
             />
           </div>
           <div>
@@ -48,7 +48,7 @@ export function ProjectFeedCard({
               </span>
             </div>
             <div className="font-label text-[11px] text-light-on-surface-muted dark:text-dark-on-surface-muted">
-              Shipped Project · {project.subtitle}
+              {project.subtitle}
             </div>
           </div>
         </div>
@@ -66,39 +66,37 @@ export function ProjectFeedCard({
         </p>
       </div>
 
-      {/* Visual Screenshot Card */}
+      {/* Visual Screenshot Container (Un-cropped object-contain fitting) */}
       <div
         onClick={() => onOpenCaseStudy(project)}
-        className="group relative cursor-pointer rounded-md overflow-hidden border border-light-outline dark:border-dark-outline bg-light-surface dark:bg-dark-surface max-h-64"
+        className="group relative cursor-pointer rounded-md overflow-hidden border border-light-outline dark:border-dark-outline bg-light-surface dark:bg-dark-surface p-sm sm:p-md"
       >
-        <img
-          src={project.imageUrl}
-          alt={project.title}
-          loading="lazy"
-          className={`w-full h-56 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-[1.02] ${
-            project.category === 'mobile' ? 'object-top' : 'object-center'
-          }`}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-between p-md">
-          <span className="font-label text-label-sm text-white">
-            Click to read full 6-part engineering case study →
-          </span>
-        </div>
+        {project.secondaryImageUrl ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-md items-center justify-items-center">
+            <img
+              src={project.imageUrl}
+              alt={`${project.title} screen 1`}
+              loading="lazy"
+              className="max-h-80 w-auto object-contain rounded border border-light-outline/60 dark:border-dark-outline/60 shadow-xs transition-transform duration-300 group-hover:scale-[1.01]"
+            />
+            <img
+              src={project.secondaryImageUrl}
+              alt={`${project.title} screen 2`}
+              loading="lazy"
+              className="max-h-80 w-auto object-contain rounded border border-light-outline/60 dark:border-dark-outline/60 shadow-xs transition-transform duration-300 group-hover:scale-[1.01]"
+            />
+          </div>
+        ) : (
+          <div className="flex items-center justify-center">
+            <img
+              src={project.imageUrl}
+              alt={project.title}
+              loading="lazy"
+              className="max-h-80 w-full object-contain rounded transition-transform duration-300 group-hover:scale-[1.01]"
+            />
+          </div>
+        )}
       </div>
-
-      {/* Highlights Chips */}
-      {project.highlights.length > 0 && (
-        <div className="flex flex-wrap gap-1.5">
-          {project.highlights.map((item) => (
-            <span
-              key={item}
-              className="inline-flex items-center gap-1 rounded bg-light-surface-muted/70 dark:bg-dark-surface-muted/70 px-2 py-0.5 font-label text-[11px] text-light-primary dark:text-dark-primary"
-            >
-              ✦ {item}
-            </span>
-          ))}
-        </div>
-      )}
 
       {/* Tech Stack Badges */}
       <div className="flex flex-wrap gap-1.5">
@@ -133,23 +131,22 @@ export function ProjectFeedCard({
 
           <div className="flex items-center justify-between pt-xs border-t border-light-outline dark:border-dark-outline">
             <span className="font-label text-[11px] text-light-on-surface-muted dark:text-dark-on-surface-muted">
-              {project.architecture.layers.length} architecture layers · {project.features.length} core capabilities
+              {project.architecture.layers.length} architecture layers · {project.features.length} core features
             </span>
             <Button
               variant="primary"
               size="sm"
               onClick={() => onOpenCaseStudy(project)}
             >
-              Open Full Thread (1/6)
+              Open Full Thread
             </Button>
           </div>
         </div>
       )}
 
-      {/* Action Footer (Like, Quick Preview, Full Case Study, GitHub, Live Demo) */}
+      {/* Action Footer */}
       <div className="flex flex-wrap items-center justify-between gap-sm pt-xs border-t border-light-outline dark:border-dark-outline">
         <div className="flex items-center gap-xs">
-          {/* Live Like Button */}
           <button
             type="button"
             onClick={() => onLike(project.id)}
@@ -168,7 +165,6 @@ export function ProjectFeedCard({
             <span>{project.likes}</span>
           </button>
 
-          {/* Quick Thread Drawer Toggle */}
           <button
             type="button"
             onClick={() => setDrawerOpen((prev) => !prev)}

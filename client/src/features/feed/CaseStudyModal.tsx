@@ -72,25 +72,21 @@ export function CaseStudyModal({
           </div>
         </div>
 
-        {/* Project Visual Preview */}
+        {/* Project Visual Preview (Un-cropped object-contain) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-sm">
-          <div className="rounded-md overflow-hidden border border-light-outline dark:border-dark-outline bg-light-surface dark:bg-dark-surface">
+          <div className="rounded-md overflow-hidden border border-light-outline dark:border-dark-outline bg-light-surface dark:bg-dark-surface p-sm flex items-center justify-center">
             <img
               src={project.imageUrl}
               alt={`${project.title} primary screenshot`}
-              className={`w-full h-48 object-cover ${
-                project.category === 'mobile' ? 'object-top' : 'object-center'
-              }`}
+              className="max-h-72 w-auto object-contain rounded"
             />
           </div>
           {project.secondaryImageUrl ? (
-            <div className="rounded-md overflow-hidden border border-light-outline dark:border-dark-outline bg-light-surface dark:bg-dark-surface">
+            <div className="rounded-md overflow-hidden border border-light-outline dark:border-dark-outline bg-light-surface dark:bg-dark-surface p-sm flex items-center justify-center">
               <img
                 src={project.secondaryImageUrl}
                 alt={`${project.title} secondary screenshot`}
-                className={`w-full h-48 object-cover ${
-                  project.category === 'mobile' ? 'object-top' : 'object-center'
-                }`}
+                className="max-h-72 w-auto object-contain rounded"
               />
             </div>
           ) : (
@@ -234,3 +230,4 @@ export function CaseStudyModal({
     </Modal>
   );
 }
+

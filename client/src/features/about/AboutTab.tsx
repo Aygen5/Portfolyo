@@ -1,4 +1,16 @@
-import { Award, Download, ExternalLink, GraduationCap, MapPin } from 'lucide-react';
+import {
+  Award,
+  Blocks,
+  Code2,
+  Database,
+  Download,
+  ExternalLink,
+  GraduationCap,
+  Kanban,
+  MapPin,
+  Palette,
+  Smartphone,
+} from 'lucide-react';
 import { Badge } from '../../components/Badge';
 import {
   EDUCATION_TIMELINE,
@@ -6,18 +18,57 @@ import {
   PROFILE_DATA,
 } from '../../data/portfolioData';
 
+const VISUAL_HIGHLIGHTS = [
+  {
+    icon: Code2,
+    title: 'Backend Core',
+    tech: '.NET Core · C# · Node.js',
+    accent: 'text-light-primary dark:text-dark-primary',
+  },
+  {
+    icon: Palette,
+    title: 'Frontend & UI/UX',
+    tech: 'React · TypeScript · Tailwind',
+    accent: 'text-terracotta',
+  },
+  {
+    icon: Smartphone,
+    title: 'Mobile Apps',
+    tech: 'Flutter · Dart · BLoC / Cubit',
+    accent: 'text-light-primary dark:text-dark-primary',
+  },
+  {
+    icon: Database,
+    title: 'Data Layer',
+    tech: 'PostgreSQL · MongoDB · PostGIS',
+    accent: 'text-terracotta',
+  },
+  {
+    icon: Blocks,
+    title: 'Enterprise Tech',
+    tech: 'SAP Business Processes',
+    accent: 'text-light-primary dark:text-dark-primary',
+  },
+  {
+    icon: Kanban,
+    title: 'Architecture & PM',
+    tech: 'Clean Arch · Roadmaps · Sprints',
+    accent: 'text-terracotta',
+  },
+];
+
 export function AboutTab() {
   return (
     <div className="flex flex-col gap-lg">
-      {/* 1. About Me Summary + One-Click CV Download */}
+      {/* 1. Visual Identity & Concise Bold Highlights */}
       <section className="rounded-md bg-light-surface-container dark:bg-dark-surface-container border border-light-outline dark:border-dark-outline p-md sm:p-lg flex flex-col gap-md">
         <div className="flex flex-wrap items-center justify-between gap-sm pb-sm border-b border-light-outline dark:border-dark-outline">
           <div>
             <span className="font-label text-label-sm text-terracotta uppercase tracking-wider">
-              Who is Aygen Yıldırım?
+              Engineering Profile
             </span>
             <h3 className="font-headline text-headline-md text-light-on-surface dark:text-dark-on-surface">
-              Engineering with Clean Architecture &amp; Visual Sensitivity
+              Clean Architecture, Multi-Disciplinary Craft &amp; Visual Care
             </h3>
           </div>
 
@@ -33,52 +84,75 @@ export function AboutTab() {
           </a>
         </div>
 
-        <div className="flex flex-col gap-sm font-body text-body-md text-light-on-surface dark:text-dark-on-surface">
-          {PROFILE_DATA.aboutParagraphs.map((para, idx) => (
-            <p key={idx} className="leading-relaxed">
-              {para}
-            </p>
-          ))}
+        {/* Concise Scannable Paragraphs with Bold Keywords */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-md font-body text-body-md text-light-on-surface dark:text-dark-on-surface">
+          <p className="leading-relaxed rounded bg-light-surface dark:bg-dark-surface p-md border border-light-outline/70 dark:border-dark-outline/70">
+            I build scalable backends with <strong>ASP.NET Core (.NET)</strong> and{' '}
+            <strong>Node.js</strong>, pair them with dynamic <strong>React &amp; TypeScript</strong>{' '}
+            frontends, and engineer cross-platform mobile apps using{' '}
+            <strong>Flutter &amp; Dart</strong> — backed by <strong>PostgreSQL</strong> and{' '}
+            <strong>MongoDB</strong>.
+          </p>
+          <p className="leading-relaxed rounded bg-light-surface dark:bg-dark-surface p-md border border-light-outline/70 dark:border-dark-outline/70">
+            Beyond writing code, I love <strong>designing Clean Architecture</strong>,{' '}
+            <strong>planning project roadmaps</strong>, crafting thoughtful{' '}
+            <strong>UI/UX experiences</strong>, and expanding into enterprise solutions with{' '}
+            <strong>SAP technologies</strong>.
+          </p>
+        </div>
+
+        {/* 6 Visual Icon Cards */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-sm pt-xs">
+          {VISUAL_HIGHLIGHTS.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.title}
+                className="rounded-md bg-light-surface dark:bg-dark-surface border border-light-outline dark:border-dark-outline p-sm flex items-start gap-2.5"
+              >
+                <div className="w-8 h-8 rounded bg-light-surface-container dark:bg-dark-surface-container border border-light-outline dark:border-dark-outline flex items-center justify-center shrink-0">
+                  <Icon className={`w-4 h-4 ${item.accent}`} />
+                </div>
+                <div className="min-w-0">
+                  <div className="font-body text-body-sm font-bold text-light-on-surface dark:text-dark-on-surface truncate">
+                    {item.title}
+                  </div>
+                  <div className="font-label text-[11px] text-light-on-surface-muted dark:text-dark-on-surface-muted truncate">
+                    {item.tech}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
-      {/* 2. Key Focus Areas (4 Pillars) */}
-      <section className="flex flex-col gap-sm">
-        <div className="flex items-center justify-between">
-          <h3 className="font-headline text-headline-md text-light-on-surface dark:text-dark-on-surface">
-            Key Focus Areas
-          </h3>
-          <span className="font-label text-label-sm text-light-on-surface-muted dark:text-dark-on-surface-muted">
-            Backend · Full-Stack · Mobile · SAP &amp; Architecture
-          </span>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
-          {KEY_FOCUS_AREAS.map((area) => (
-            <div
-              key={area.title}
-              className="rounded-md bg-light-surface-container dark:bg-dark-surface-container border border-light-outline dark:border-dark-outline p-md flex flex-col gap-sm"
-            >
-              <div className="flex items-center gap-sm">
-                <span className="text-xl select-none" aria-hidden="true">
-                  {area.icon}
-                </span>
-                <h4 className="font-body text-title-md text-light-on-surface dark:text-dark-on-surface">
-                  {area.title}
-                </h4>
-              </div>
-
-              <ul className="space-y-1.5 font-body text-body-sm text-light-on-surface-muted dark:text-dark-on-surface-muted">
-                {area.bullets.map((bullet) => (
-                  <li key={bullet} className="flex items-start gap-2">
-                    <span className="text-terracotta mt-0.5">•</span>
-                    <span>{bullet}</span>
-                  </li>
-                ))}
-              </ul>
+      {/* 2. Key Focus Areas (4 Visual Pillars) */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-md">
+        {KEY_FOCUS_AREAS.map((area) => (
+          <div
+            key={area.title}
+            className="rounded-md bg-light-surface-container dark:bg-dark-surface-container border border-light-outline dark:border-dark-outline p-md flex flex-col gap-sm"
+          >
+            <div className="flex items-center gap-sm">
+              <span className="w-8 h-8 rounded-full bg-light-surface dark:bg-dark-surface border border-light-outline dark:border-dark-outline flex items-center justify-center text-base select-none">
+                {area.icon}
+              </span>
+              <h4 className="font-body text-title-md font-bold text-light-on-surface dark:text-dark-on-surface">
+                {area.title}
+              </h4>
             </div>
-          ))}
-        </div>
+
+            <ul className="space-y-1.5 font-body text-body-sm text-light-on-surface-muted dark:text-dark-on-surface-muted">
+              {area.bullets.map((bullet) => (
+                <li key={bullet} className="flex items-start gap-2">
+                  <span className="text-terracotta font-bold mt-0.5">▸</span>
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </section>
 
       {/* 3. Education, Training & Certificates Timeline */}
@@ -86,7 +160,7 @@ export function AboutTab() {
         <div className="flex items-center gap-2">
           <GraduationCap className="w-5 h-5 text-light-primary dark:text-dark-primary" />
           <h3 className="font-headline text-headline-md text-light-on-surface dark:text-dark-on-surface">
-            Education, Intensive Training &amp; Certificates
+            Education &amp; Verified Certificates
           </h3>
         </div>
 
@@ -94,20 +168,19 @@ export function AboutTab() {
           {EDUCATION_TIMELINE.map((item) => (
             <article
               key={item.institution}
-              className="relative rounded-md bg-light-surface-container dark:bg-dark-surface-container border border-light-outline dark:border-dark-outline p-md sm:p-lg flex flex-col gap-sm"
+              className="relative rounded-md bg-light-surface-container dark:bg-dark-surface-container border border-light-outline dark:border-dark-outline p-md flex flex-col gap-sm"
             >
-              {/* Timeline Dot */}
-              <span className="absolute -left-[31px] top-6 w-3.5 h-3.5 rounded-full bg-light-primary dark:bg-dark-primary border-2 border-light-surface-container dark:border-dark-surface-container" />
+              <span className="absolute -left-[31px] top-5 w-3.5 h-3.5 rounded-full bg-light-primary dark:bg-dark-primary border-2 border-light-surface-container dark:border-dark-surface-container" />
 
               <div className="flex flex-wrap items-start justify-between gap-xs">
                 <div>
-                  <span className="font-label text-label-sm text-terracotta">
+                  <span className="font-label text-label-sm font-semibold text-terracotta">
                     {item.period}
                   </span>
-                  <h4 className="font-headline text-headline-md text-light-on-surface dark:text-dark-on-surface mt-0.5">
+                  <h4 className="font-headline text-headline-md text-light-on-surface dark:text-dark-on-surface">
                     {item.institution}
                   </h4>
-                  <div className="font-body text-body-sm font-semibold text-light-primary dark:text-dark-primary">
+                  <div className="font-body text-body-sm font-bold text-light-primary dark:text-dark-primary">
                     {item.role}
                   </div>
                 </div>
@@ -118,11 +191,11 @@ export function AboutTab() {
                 </span>
               </div>
 
-              <p className="font-body text-body-sm text-light-on-surface dark:text-dark-on-surface leading-relaxed">
+              <p className="font-body text-body-sm text-light-on-surface dark:text-dark-on-surface">
                 {item.description}
               </p>
 
-              <div className="flex flex-wrap items-center justify-between gap-sm pt-xs">
+              <div className="flex flex-wrap items-center justify-between gap-sm pt-1">
                 <div className="flex flex-wrap gap-1.5">
                   {item.tags.map((tag) => (
                     <Badge key={tag} variant="tech">

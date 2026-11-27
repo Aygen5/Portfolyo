@@ -25,7 +25,7 @@ export function Navbar({
 
   return (
     <header className="sticky top-0 z-40 border-b border-light-outline dark:border-dark-outline bg-light-surface/90 dark:bg-dark-surface/90 backdrop-blur-sm transition-colors duration-tab-switch">
-      <div className="max-w-3xl mx-auto px-md sm:px-lg h-16 flex items-center justify-between gap-md">
+      <div className="max-w-5xl mx-auto px-md sm:px-lg h-16 flex items-center justify-between gap-md">
         {/* Left: Handwritten A.Y Signature */}
         <a
           href="#top"
@@ -97,3 +97,4 @@ export function Navbar({
     </header>
   );
 }
+

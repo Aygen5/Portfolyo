@@ -95,7 +95,7 @@ export function App() {
 
       <main
         id="top"
-        className="flex-1 w-full max-w-3xl mx-auto px-md sm:px-lg py-lg sm:py-xl flex flex-col gap-xl"
+        className="flex-1 w-full max-w-5xl mx-auto px-md sm:px-lg py-lg sm:py-xl flex flex-col gap-xl"
       >
         {isAdminRoute ? (
           <AdminDashboard
