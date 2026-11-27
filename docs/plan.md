@@ -36,11 +36,11 @@ Bu plan, projenin baştan sona **Clean Architecture** ve **Design System** kural
 ---
 
 ## Faz 2: Design System & Frontend Çekirdeği (Client Core)
-- [ ] Tailwind CSS yapılandırmasını `docs/design-system.md` renk token'larıyla (Warm Light & Warm Dark) ve fontlarla (`DM Serif Display`, `Manrope`, `IBM Plex Mono`, `Caveat`) kur.
-- [ ] Framer Motion ve Lucide ikon paketlerini ekle; `prefers-reduced-motion` desteğini global CSS ve hook seviyesinde tanımla.
-- [ ] `ThemeProvider` (Warm Light ↔ Warm Dark geçişi + `localStorage` kalıcılığı) oluştur.
-- [ ] `client/src/domain/` tiplerini ve `client/src/services/` (`apiClient`, `projectService`, `postService`, `guestbookService`, `messageService`, `adminService`) katmanını oluştur.
-- [ ] Atomik UI bileşenlerini (`Button`, `Badge`, `Card`, `Drawer/Modal`, `Toast`) oluştur.
+- [x] Tailwind CSS yapılandırmasını `docs/design-system.md` renk token'larıyla (Warm Light & Warm Dark) ve fontlarla (`DM Serif Display`, `Manrope`, `IBM Plex Mono`, `Caveat`) kur.
+- [x] Framer Motion ve Lucide ikon paketlerini ekle; `prefers-reduced-motion` desteğini global CSS ve hook seviyesinde tanımla.
+- [x] `ThemeProvider` (Warm Light ↔ Warm Dark geçişi + `localStorage` kalıcılığı) oluştur.
+- [x] `client/src/domain/` tiplerini ve `client/src/services/` (`apiClient`, `projectService`, `postService`, `guestbookService`, `messageService`, `adminService`) katmanını oluştur.
+- [x] Atomik UI bileşenlerini (`Button`, `Badge`, `Card`, `Drawer/Modal`, `Toast`) oluştur.
 
 ---
 
